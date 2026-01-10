@@ -1,17 +1,30 @@
+import json
+
+file_name = "to_do_list.json"
+
+
 def load_task():
-    pass
+    try:
+        with open(file_name, "r") as file:
+            return json.load(file)    
+    except:
+        return {"tasks": []}
 
 
-def save_task():
-    pass
+def save_task(tasks):
+    try:
+        with open(file_name, "w") as file:
+            json.dump(tasks, file)
+    except:
+        print("Failed to save.")
 
 
 def view_task():
     pass
 
 
-def create_task():
-    pass
+def create_task(tasks):
+    
 
 
 def mark_task_complete():
@@ -19,4 +32,34 @@ def mark_task_complete():
 
 
 def main():
-    pass
+    tasks = load_task()
+    print(tasks)
+
+    while True:
+        print("\nTo-Do List Manager")
+        print("1. View Tasks")
+        print("2. Add Task")
+        print("3. Complete Task")
+        print("4. Exit")
+
+        choice = input("Enter your choice: ").strip()
+
+        if choice == "1":
+            view_task()
+
+        elif choice == "2":
+            description = input("Enter your task: ")
+            create_task()
+
+        elif choice == "3":
+            mark_task_complete()
+
+        elif choice == "4":
+            print("Goodbye!")
+            break
+
+        else:
+            print("Invalid Choice. Try again.")
+
+
+main()
