@@ -2,6 +2,7 @@ import json
 
 file_name = "to_do_list.json"
 
+# to be added: 1. marked as incomplete  2. delete task
 
 def load_task():
     try:
