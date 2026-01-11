@@ -1,1 +1,1 @@
-{"tasks": ["saved task", {"Description": "Complete to do list manager project", "Complete": false}]}
+{"tasks": [{"description": "Complete to do list manager project", "complete": true}, {"description": "Read a book", "complete": false}]}
