@@ -24,7 +24,13 @@ def view_task():
 
 
 def create_task(tasks):
-    
+    description = input("Enter task description: ").strip()
+    if description:
+        tasks["tasks"].append({"Description": description, "Complete": False})
+        save_task(tasks)
+        print("Task Added.")
+    else:
+        print("Description cannot be empty.")
 
 
 def mark_task_complete():
@@ -48,7 +54,6 @@ def main():
             view_task()
 
         elif choice == "2":
-            description = input("Enter your task: ")
             create_task()
 
         elif choice == "3":
