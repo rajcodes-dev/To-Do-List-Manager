@@ -1,1 +1,19 @@
-{"tasks": [{"description": "Complete to do list manager project", "complete": true}, {"description": "Read a book", "complete": false}]}
+{
+    "tasks": [
+        {
+            "description": "Complete to do list manager project",
+            "complete": false,
+            "incomplete": true
+        },
+        {
+            "description": "Read a book",
+            "complete": true,
+            "incomplete": false
+        },
+        {
+            "description": "fly a kit",
+            "complete": false,
+            "incomplete": true
+        }
+    ]
+}
