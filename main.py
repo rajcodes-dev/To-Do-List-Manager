@@ -2,8 +2,6 @@ import json
 
 file_name = "to_do_list.json"
 
-# to be added: 1. marked as incomplete  2. delete task
-
 
 def load_task():
     try:
@@ -36,6 +34,7 @@ def view_task(tasks):
             else:
                 status = "[Pending]"
             print(f"{idx+1}. {task['description']} | {status}")
+    print()
 
 
 def create_task(tasks):
@@ -80,6 +79,21 @@ def mark_task_incomplete(tasks):
         print("Enter the valid number.")
 
 
+def delete_task(tasks):
+    view_task(tasks)
+    try:
+        task_number = int(
+            input("Enter the task number to delete task: ").strip()
+        )
+        if 1 <= task_number <= len(tasks["tasks"]):
+            task_list = tasks["tasks"]
+            task_list.pop(task_number - 1)
+            save_task(tasks)
+            print("Task is deleted")
+    except:
+        print("Enter the valid number.")
+
+
 def main():
     tasks = load_task()
 
@@ -89,7 +103,8 @@ def main():
         print("2. Add Task")
         print("3. Complete Task")
         print("4. Incomplete Task")
-        print("5. Exit")
+        print("5. Delete Task")
+        print("6. Exit")
 
         choice = input("Enter your choice: ").strip()
 
@@ -106,6 +121,9 @@ def main():
             mark_task_incomplete(tasks)
 
         elif choice == "5":
+            delete_task(tasks)
+
+        elif choice == "6":
             print("Goodbye!")
             break
 

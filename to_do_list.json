@@ -9,11 +9,6 @@
             "description": "Read a book",
             "complete": true,
             "incomplete": false
-        },
-        {
-            "description": "fly a kit",
-            "complete": false,
-            "incomplete": true
         }
     ]
 }
