@@ -54,7 +54,7 @@ def main():
             view_task()
 
         elif choice == "2":
-            create_task()
+            create_task(tasks)
 
         elif choice == "3":
             mark_task_complete()
